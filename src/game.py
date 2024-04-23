@@ -230,13 +230,6 @@ class Menu():
         self.choose.bgcolor = Color('orange')
 
         self.font = pygame.font.Font('freesansbold.ttf', 20)
-
-        self.joysticks = []
-        for i in range(0, pygame.joystick.get_count()):
-                self.joysticks.append(pygame.joystick.Joystick(i))
-                self.joysticks[-1].init()
-                print ("Detected joystick '",self.joysticks[-1].get_name(),"'")
-        
         
 
     def main_loop(self):
@@ -254,13 +247,6 @@ class Menu():
         self.topgun.draw(self.screen)
         self.hail.draw(self.screen)
         self.choose.draw(self.screen)
-
-        if self.joysticks:
-            self.controller_text = self.font.render('Controller Detected', True, Color('white'))
-            self.controller_rect = self.controller_text.get_rect()
-            self.controller_rect.left = 10
-            self.controller_rect.top = 10
-            self.screen.blit(self.controller_text, self.controller_rect)
 
         pygame.display.flip() #put all the work on the screen
 

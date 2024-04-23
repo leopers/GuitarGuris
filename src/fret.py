@@ -63,10 +63,6 @@ class Fret(pygame.sprite.Sprite):
                     if note.sustain != 0 and self.pressed:
                         note.held = True
                         self.held_note = note
-                        #self.held_note_s_y = note.sustain_y
-
-        #if self.held_note != None:
-         #   self.held_note_s_y += 6
 
         if self.held_note != None:
             self.game.score += 2 * self.game.multiplier
